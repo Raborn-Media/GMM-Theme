@@ -14,6 +14,7 @@ h6,
 .h4,
 .h5,
 .h6 {
+  font-family: $sub-font;
   a {
     color: inherit;
   }
@@ -22,21 +23,36 @@ h6,
 h1,
 .h1 {
   /* basic heading styles */
+  font-size: 60px;
+  font-weight: 300;
+  line-height: 78px; /* 130% */
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
 }
 
 h2,
 .h2 {
   /* basic heading styles */
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 60px; /* 120% */
+  text-transform: uppercase;
 }
 
 h3,
 .h3 {
   /* basic heading styles */
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 h4,
 .h4 {
   /* basic heading styles */
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.2;
 }
 
 h5,
@@ -51,6 +67,12 @@ h6,
 
 p {
   /* basic paragraph styles */
+
+  font-family: $font;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 165.4%; /* 29.772px */
   &:empty {
     display: none;
   }
@@ -198,6 +220,15 @@ input[type='button'] {
 /* Button additional styles */
 
 .button {
+  color: #000;
+  font-family: $sub-font;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1;
+  text-transform: uppercase;
+  padding: 28px 39px 29px 39px;
+  background-color: $yellow;
+
   &:hover,
   &:focus {
     /* basic hover and focus effects */

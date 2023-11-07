@@ -1,3 +1,12 @@
+header {
+  position: absolute;
+  background-color: transparent;
+  width: 100%;
+  top: 69px;
+  left: 0;
+  z-index: 999;
+}
+
 .logo {
   h1 {
     font-size: 0;
@@ -111,24 +120,29 @@
 
 @include breakpoint(medium) {
   /* TOP BAR STYLING */
-
+  .top-bar,
+  .menu-main-menu-container {
+    height: 100%;
+  }
   .header-menu.menu {
     /* Align menu items to the right */
-    // justify-content: flex-end;
-
+    height: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 100px;
     /* Align menu items to the center */
     // justify-content: center;
 
     li {
       > a {
         /* Regular menu item style */
-        line-height: 40px;
-        color: $primary-color;
+        //line-height: 40px;
+        color: $white;
 
         &:hover {
           /* menu item style on hover */
-          background: $primary-color;
-          color: $white;
+          //background: $primary-color;
+          color: $yellow;
         }
       }
 
@@ -137,8 +151,8 @@
       &.current_page_parent {
         > a {
           /* Style of Current page and Ancestor page */
-          background: $primary-color;
-          color: $white;
+          //background: $primary-color;
+          color: $yellow;
         }
       }
 

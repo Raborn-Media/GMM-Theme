@@ -113,3 +113,9 @@ comment or delete styles below */
    Gutenberg blocks
 ----------------------------------------- */
 //@import '../blocks/gutenberg/**/styles.scss';
+
+/* -----------------------------------------
+  FLEXIBLE SECTIONS STYLES
+----------------------------------------- */
+@import 'flexible/hero';
+@import 'flexible/about-section';

@@ -2,6 +2,9 @@
 // Note: Prefer using framework variables
 
 //$blue: #1a608b;
+$yellow: #ffd300;
+$gray: #7d7d7d;
+$light-gray: #f6f6f6;
 //
 //$text-color: #333;
 
@@ -9,9 +12,9 @@
 //$sub-color: $primary-color;
 
 $font: 'Open Sans', Helvetica, Roboto, Arial, sans-serif;
-//$sub-font: $font;
+$sub-font: 'Exo', sans-serif;
 $fa: 'Font Awesome 6 Free';
-//$fab: 'Font Awesome 6 Brands';
+$fab: 'Font Awesome 6 Brands';
 
 // Font Awesome Vars
 //$fa-font-display: swap;
@@ -20,5 +23,5 @@ $fa: 'Font Awesome 6 Free';
 
 // Custom fonts
 :root {
-  --content-size: 80rem;
+  --content-size: 1600px;
 }

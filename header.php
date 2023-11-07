@@ -7,7 +7,7 @@
 <html <?php language_attributes(); ?>>
 <head>
     <!-- Set up Meta -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="<?php bloginfo('charset'); ?>">
 
     <!-- Set the viewport width to device width for mobile -->
@@ -17,7 +17,10 @@
 
     <!-- Add external fonts below (GoogleFonts / Typekit) -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
     <?php wp_head(); ?>
 </head>
 
