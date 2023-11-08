@@ -65,6 +65,16 @@ function resizeVideo() {
  */
 $(document).on('ready', function () {
   /**
+   * Reviews slider
+   */
+  $('.reviews-slider').slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: false,
+    arrows: true,
+  });
+  /**
    * Make elements equal height
    */
   $('.matchHeight').matchHeight();

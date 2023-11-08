@@ -1,28 +1,92 @@
 .footer {
   margin-top: auto;
+  padding-top: 108px;
+  padding-bottom: 61px;
+
+  .column-title {
+    color: $black;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 24px;
+  }
+
+  .column-subtitle {
+    color: $gmm-gray;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 29.7px;
+    margin-bottom: 0;
+  }
+
+  a {
+    color: $gmm-gray;
+    font-family: $font;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 29.7px;
+    &:hover {
+      color: $yellow;
+    }
+  }
+  .contacts-col {
+    padding: 0 51px;
+    .column-title {
+      margin-bottom: 32px;
+    }
+
+    .address,
+    .email,
+    .phone {
+      margin-bottom: 30px;
+    }
+  }
+  .logo-col {
+    padding: 0 41px;
+    border-right: 1px solid $gmm-gray;
+    border-left: 1px solid $gmm-gray;
+  }
 }
 
 .footer__logo {
+  margin-bottom: 49px;
   img {
-    max-height: 120px;
+    width: 100%;
+    max-width: 140px;
   }
 }
 
 .footer__sp {
-  text-align: right;
+  text-align: center;
+
+  .stay-tuned {
+    &__item {
+    }
+    &__link {
+      color: $black;
+      .fab {
+        color: inherit;
+        font-size: 25px;
+      }
+    }
+  }
 }
 
 .footer-menu {
   @include list-unstyled;
 
-  text-align: center;
+  //text-align: center;
 
   li {
-    display: inline-block;
+    //display: inline-block;
 
     a {
       display: block;
       padding: 5px 10px;
+      font-family: $sub-font;
+      color: var(--GMM-Grey, #7d7d7d);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 49px;
     }
   }
 }
@@ -30,7 +94,7 @@
 .footer__copy {
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: $light-gray;
   font-size: 12px;
   text-align: center;
+  margin-bottom: 49px;
 }
