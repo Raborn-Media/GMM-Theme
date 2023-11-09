@@ -14,13 +14,13 @@ $section_bottom_text = get_sub_field('section_bottom_text');
         <div class='grid-x'>
             <div class='cell text-center'>
                 <?php if ($section_title) : ?>
-                    <h2>
+                    <h2 class='section-title'>
                         <?php echo $section_title; ?>
                     </h2>
                 <?php endif; ?>
 
                 <?php if ($section_text) : ?>
-                    <article>
+                    <article class='section-text'>
                         <?php echo $section_text; ?>
                     </article>
                 <?php endif; ?>
@@ -33,14 +33,14 @@ $section_bottom_text = get_sub_field('section_bottom_text');
                             // Setup this post for WP functions (variable must be named $post).
                             setup_postdata($post);
                             ?>
-                            <div class='product matchHeight'>
+                            <a href='<?php the_permalink(); ?>' class='product matchHeight'>
                                 <div class='product__image'>
                                     <?php the_post_thumbnail(); ?>
                                 </div>
-                                <h4>
+                                <h4 class='product__title'>
                                     <?php the_title(); ?>
                                 </h4>
-                            </div>
+                            </a>
                         <?php endforeach; ?>
                     </div>
                     <?php

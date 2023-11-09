@@ -1,0 +1,56 @@
+.team-section {
+  padding-top: 30px;
+  padding-bottom: 140px;
+
+  .section-subtitle {
+    color: $gmm-gray;
+  }
+  .section-text {
+    color: $gmm-gray;
+    max-width: 852px;
+    margin: 16px auto 60px;
+  }
+
+  .team-members-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    row-gap: 27px;
+
+    .team-member {
+      text-align: left;
+      border: 1px solid $black;
+      width: 100%;
+      max-width: 32%;
+      &__photo {
+        background-color: $yellow;
+      }
+      &__info {
+        padding: 35px 28px 25px;
+
+        h4 {
+          color: $gmm-gray;
+        }
+      }
+    }
+  }
+  @include breakpoint(medium down) {
+    .team-members-list {
+      .team-member {
+        max-width: 49%;
+      }
+    }
+  }
+  @include breakpoint(small down) {
+    .team-members-list {
+      .team-member {
+        max-width: 100%;
+      }
+    }
+  }
+}

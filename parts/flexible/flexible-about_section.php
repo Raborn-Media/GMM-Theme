@@ -23,7 +23,7 @@ $section_button = get_sub_field('section_button');
                         <?php echo $section_subtitle; ?>
                     </h4>
                 <?php endif; ?>
-                <?php if ($section_subtitle) : ?>
+                <?php if ($section_title) : ?>
                     <h2 class='section-title'>
                         <?php echo $section_title; ?>
                     </h2>
@@ -38,7 +38,8 @@ $section_button = get_sub_field('section_button');
                 <?php if (have_rows('section_list')) : ?>
                     <div
                         class='section-list'>
-                        <?php while (have_rows('section_list')) : the_row();
+                        <?php while (have_rows('section_list')) :
+                            the_row();
                             $list_item_icon = get_sub_field('list_item_icon');
                             $list_item_title = get_sub_field('list_item_title');
                             $list_item_text = get_sub_field('list_item_text');

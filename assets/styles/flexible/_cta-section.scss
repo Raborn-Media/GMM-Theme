@@ -1,0 +1,52 @@
+.cta-section {
+  padding-top: 108px;
+
+  .sectio-bg {
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: $white;
+  }
+
+  .content-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .section-title {
+    margin-bottom: 24px;
+  }
+
+  .section-text {
+    margin-bottom: 44px;
+  }
+
+  .section-image {
+    padding-right: 29px;
+    padding-bottom: 21px;
+    position: relative;
+    top: -108px;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 1px;
+      height: 92%;
+      background-color: $gmm-gray;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 92%;
+      height: 1px;
+      background-color: $gmm-gray;
+    }
+  }
+}

@@ -226,13 +226,42 @@ input[type='button'] {
   font-family: $sub-font;
   font-size: 20px;
   font-weight: 300;
-  line-height: 1;
+  line-height: 0.9;
   text-transform: uppercase;
   padding: 28px 39px 29px 39px;
   background-color: $yellow;
+  position: relative;
+  transition: all 0.5s ease-out;
+  width: 100%;
+  max-width: fit-content;
+
+  &:after {
+    content: '';
+    width: 19px;
+    vertical-align: baseline;
+    aspect-ratio: 1/1;
+    background-image: url('../../images/arrow.svg');
+    display: block;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 39px;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
 
   &:hover,
   &:focus {
     /* basic hover and focus effects */
+    background-color: $yellow;
+    color: $black;
+    padding: 28px 68px 29px 39px;
+
+    &:after {
+      opacity: 1;
+    }
   }
 }

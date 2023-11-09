@@ -50,6 +50,11 @@ comment or delete styles below */
 @import 'inc/gform';
 
 /* -----------------------------------------
+  Hero section
+----------------------------------------- */
+@import 'inc/hero';
+
+/* -----------------------------------------
   Content Styles
 ----------------------------------------- */
 @import 'inc/content';
@@ -117,7 +122,9 @@ comment or delete styles below */
 /* -----------------------------------------
   FLEXIBLE SECTIONS STYLES
 ----------------------------------------- */
-@import 'flexible/hero';
 @import 'flexible/about-section';
 @import 'flexible/products-section';
 @import 'flexible/reviews';
+@import 'flexible/cta-section';
+@import 'flexible/team-section';
+@import 'flexible/why-choose-us';

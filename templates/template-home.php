@@ -11,6 +11,8 @@ get_header(); ?>
 <!--END of HOME PAGE SLIDER-->
 
 <!-- BEGIN of main content -->
+<?php get_template_part('parts/hero-section'); ?>
+
 <?php if (have_rows('flexible')) : ?>
     <?php while (have_rows('flexible')) :
         the_row();
