@@ -65,6 +65,24 @@ function resizeVideo() {
  */
 $(document).on('ready', function () {
   /**
+   * Anchor links scroll
+   */
+  $(document).ready(function () {
+    $('.anchor-links__link').on('click', function (event) {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Get the target section ID from the href attribute
+      var targetId = $(this).attr('href');
+
+      // Use jQuery's animate function to smoothly scroll to the target section
+      $('html, body').animate(
+        { scrollTop: $(targetId).offset().top - 100 },
+        500
+      );
+    });
+  });
+  /**
    * Reviews slider
    */
   $('.reviews-slider').slick({
@@ -73,6 +91,16 @@ $(document).on('ready', function () {
     slidesToScroll: 1,
     dots: false,
     arrows: true,
+  });
+  /**
+   * Gallery slider
+   */
+  $('.gallery-slider').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    dots: false,
+    arrows: true,
+    infinite: true,
   });
   /**
    * Make elements equal height

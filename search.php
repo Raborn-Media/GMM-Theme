@@ -4,7 +4,9 @@
  *
  * Standard loop for the search result page
  */
-get_header(); ?>
+get_header();
+get_template_part('parts/hero-section');
+?>
 
 <div class="grid-container">
     <div class="grid-x grid-margin-x posts-list">

@@ -8,7 +8,7 @@ $section_button = get_sub_field('section_button');
 ?>
 
 <!-- BEGIN  why-choose-us -->
-<section class='why-choose-us' <?php bg($section_bg['url'], 'full_hd'); ?>>
+<section class='why-choose-us section-bottom-triangle section-top-triangle' <?php bg($section_bg['url'], 'full_hd'); ?>>
     <div class='overlay'></div>
     <div class='grid-container section-container'>
         <div class='grid-x'>

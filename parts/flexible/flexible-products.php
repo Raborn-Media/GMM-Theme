@@ -5,11 +5,15 @@ $section_bg = get_sub_field('section_bg');
 $section_text = get_sub_field('section_text');
 $section_bottom_image = get_sub_field('section_bottom_image');
 $section_bottom_text = get_sub_field('section_bottom_text');
+$top_graphics = get_sub_field('top_graphics');
 ?>
 
 <!-- BEGIN  products-section -->
-<section class='products-section section-top-triangle' <?php bg($section_bg['url'], 'full_hd'); ?>>
-    <div class='overlay'></div>
+<section
+    class='products-section <?php echo $top_graphics == true ? 'section-top-triangle' : ''; ?>' <?php bg($section_bg['url'], 'full_hd'); ?>>
+    <?php if ($section_bg) : ?>
+        <div class='overlay'></div>
+    <?php endif; ?>
     <div class='grid-container products-container'>
         <div class='grid-x'>
             <div class='cell text-center'>
@@ -48,7 +52,7 @@ $section_bottom_text = get_sub_field('section_bottom_text');
                     wp_reset_postdata(); ?>
                 <?php endif; ?>
                 <?php if ($section_button) : ?>
-                    <a href='<?php echo $section_button['url'];?>' class='section-button button'>
+                    <a href='<?php echo $section_button['url']; ?>' class='section-button button'>
                         <?php echo $section_button['title']; ?>
                     </a>
                 <?php endif; ?>

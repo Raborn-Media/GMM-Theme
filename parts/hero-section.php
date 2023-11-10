@@ -1,7 +1,11 @@
 <?php
-$hero_title = get_field('hero_title');
+$hero_title_set = get_field('hero_title');
+$hero_title_default = get_the_title();
+$hero_title = $hero_title_set ? $hero_title_set : $hero_title_default;
 $hero_subtitle = get_field('hero_subtitle');
-$hero_bg = get_field('hero_bg');
+$hero_bg_img = get_field('hero_bg');
+$hero_dafault_bg = get_field('hero_dafault_bg', 'options');
+$hero_bg = $hero_bg_img ? $hero_bg_img : $hero_dafault_bg;
 $hero_link = get_field('hero_link');
 ?>
 

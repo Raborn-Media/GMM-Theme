@@ -4,6 +4,7 @@
 .fluid {
   padding: 0 !important;
 }
+
 h1,
 h2,
 h3,
@@ -17,6 +18,7 @@ h6,
 .h5,
 .h6 {
   font-family: $sub-font;
+
   a {
     color: inherit;
   }
@@ -262,6 +264,61 @@ input[type='button'] {
 
     &:after {
       opacity: 1;
+    }
+  }
+}
+
+.section-top-triangle {
+  padding-top: 370px;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    height: 163px;
+    background-image: url('../../images/section_graphics111.png');
+    background-position: 50% 0%;
+    background-size: 100% 100%;
+    transform: rotate(180deg);
+    transform-origin: center;
+    z-index: 3;
+  }
+}
+
+.section-bottom-triangle {
+  padding-bottom: 370px;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 163px;
+    background-image: url('../../images/section_graphics111.png');
+    background-size: 100% 100%;
+    background-position: 50% 0%;
+    z-index: 3;
+  }
+}
+
+.pagination {
+  li {
+    a,
+    span {
+      color: $black !important;
+
+      &.current {
+        background-color: $yellow !important;
+      }
+
+      &:hover {
+        background-color: $yellow;
+      }
     }
   }
 }
