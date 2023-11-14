@@ -8,21 +8,23 @@ get_header();
 get_template_part('parts/hero-section');
 ?>
 <main class="main-content">
-    <div class="grid-container">
-        <div class="grid-x grid-margin-x">
+    <div class="grid-container single-post-container">
+        <div class="grid-x">
             <!-- BEGIN of post content -->
             <div class="large-6 small-12 cell">
                 <?php if (have_posts()) : ?>
                     <?php while (have_posts()) :
                         the_post(); ?>
                         <article id="post-<?php the_ID(); ?>" <?php post_class('entry'); ?>>
-                            <h1 class="page-title entry__title"><?php the_title(); ?></h1>
-                            <p class="entry__meta"><?php echo sprintf(__('Written by %s on %s', 'fxy'), get_the_author_posts_link(), get_the_time(get_option('date_format'))); ?></p>
+                            <?php if ($product_subtitle = get_field('product_subtitle')) : ?>
+                                <h4 class='product-subtitle'>
+                                    <?php echo $product_subtitle; ?>
+                                </h4>
+                            <?php endif; ?>
+                            <h2 class="page-title entry__title"><?php the_title(); ?></h2>
                             <div class="entry__content clearfix">
                                 <?php the_content('', true); ?>
                             </div>
-                            <h6 class="entry__cat"><?php _e('Posted Under: ', 'fxy'); ?><?php the_category(', '); ?></h6>
-                            <?php comments_template(); ?>
                         </article>
                     <?php endwhile; ?>
                 <?php endif; ?>
@@ -31,7 +33,9 @@ get_template_part('parts/hero-section');
             <div class="large-6 small-12 cell">
                 <?php if (has_post_thumbnail()) : ?>
                     <div title="<?php the_title_attribute(); ?>" class="entry__thumb">
-                        <?php the_post_thumbnail('full_hd'); ?>
+                        <div class='product-image'>
+                            <?php the_post_thumbnail('full_hd'); ?>
+                        </div>
                     </div>
                 <?php endif; ?>
             </div>
@@ -49,7 +53,7 @@ get_template_part('parts/hero-section');
                         <div class='gallery-slider'>
                             <?php foreach ($images as $image): ?>
                                 <div class='gallery-slider__slide'>
-                                    <?php echo wp_get_attachment_image($image['id'], 'large', false, ['data-no-lazy' => '1']);?>
+                                    <?php echo wp_get_attachment_image($image['id'], 'large', false, ['data-no-lazy' => '1']); ?>
                                 </div>
                             <?php endforeach; ?>
                         </div>

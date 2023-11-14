@@ -159,3 +159,53 @@ add_image_size('large_high', 1024, 0, false);
 add_filter('use_block_editor_for_post_type', '__return_false');
 
 /*****************************************************************************/
+
+// Function to get product names from the custom post type.
+function get_product_names()
+{
+    $args = array(
+        'post_type' => 'products', // Replace with your custom post type.
+        'order' => 'ASC', // ASC, DESC
+        'posts_per_page' => -1,
+    );
+
+    $products = get_posts($args);
+
+    $product_names = array();
+    foreach ($products as $product) {
+        $product_names[] = get_the_title($product->ID);
+    }
+
+    return $product_names;
+}
+
+// Replace 'your_form_id' and 'your_select_field_id' with your actual form ID and Select field ID.
+add_filter('gform_pre_render', 'populate_product_names');
+add_filter('gform_pre_validation', 'populate_product_names');
+add_filter('gform_pre_submission_filter', 'populate_product_names');
+add_filter('gform_admin_pre_render', 'populate_product_names');
+function populate_product_names($form)
+{
+    if ($form['id'] == 1) {
+        // Get the product names from the custom post type.
+        $product_names = get_product_names(); // You need to implement the function get_product_names().
+
+        // Loop through the form fields
+        foreach ($form['fields'] as &$field) {
+            // Match the field ID and type (adjust as needed)
+            if ($field['id'] == 5 && $field['type'] == 'select') {
+                $choices = array();
+
+                foreach ($product_names as $product_name) {
+                    $choices[] = [
+                            'text' => $product_name,
+                            'value' => $product_name,
+                    ];
+                }
+                $field['choices'] = $choices;
+            }
+        }
+    }
+
+    return $form;
+}

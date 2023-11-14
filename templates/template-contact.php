@@ -3,66 +3,56 @@
  * Template Name: Contact Page
  */
 
-get_header(); ?>
+get_header();
+get_template_part('parts/hero-section');
+$default_email = get_field('email', 'options');
+$contact_email = get_field('contact_email');
+$email = $contact_email ? $contact_email : $default_email;
+$default_phone = get_field('phone', 'options');
+$contact_phone = get_field('contact_phone');
+$phone = $contact_phone ? $contact_phone : $default_phone;
+?>
 
-<main class="main-content">
-    <section class="contact">
-        <?php if (have_posts()) : ?>
-            <?php while (have_posts()) :
-                the_post(); ?>
-                <article id="<?php the_ID(); ?>" <?php post_class(); ?>>
-                    <div class="grid-container">
-                        <div class="grid-x grid-margin-x">
-                            <div class="cell medium-6">
-                                <h1 class="page-title"><?php the_title(); ?></h1>
-                                <div class="contact__content">
-                                    <?php the_content(); ?>
-                                </div>
-                                <div class="contact__links">
-                                    <?php if ($address = get_field('address', 'option')) : ?>
-                                        <address class="contact-link contact-link--address">
-                                            <?php echo $address; ?>
-                                        </address>
-                                    <?php endif; ?>
-                                    <?php if ($email = get_field('email', 'options')) : ?>
-                                        <p class="contact-link contact-link--email">
-                                            <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
-                                        </p>
-                                    <?php endif; ?>
-                                    <?php if ($phone = get_field('phone', 'options')) : ?>
-                                        <p class="contact-link contact-link--phone">
-                                            <a href="tel:<?php echo sanitize_number($phone); ?>"><?php echo $phone; ?></a>
-                                        </p>
-                                    <?php endif; ?>
-                                </div>
-                            </div>
+<section class="contact">
+    <?php if (have_posts()) : ?>
+        <?php while (have_posts()) :
+            the_post(); ?>
+            <article id="<?php the_ID(); ?>" <?php post_class(); ?>>
+                <div class="grid-container fluid">
+                    <div class="grid-x contact-row">
+                        <div class="cell large-7">
                             <?php $contact_form = get_field('contact_form'); ?>
                             <?php if (class_exists('GFAPI') && !empty($contact_form) && is_array($contact_form)) : ?>
-                                <div class="cell medium-6">
-                                    <div class="contact__form">
-                                        <?php echo do_shortcode("[gravityform id='{$contact_form['id']}' title='false' description='false' ajax='true']"); ?>
-                                    </div>
+                                <div class="contact__form">
+                                    <?php echo do_shortcode("[gravityform id='{$contact_form['id']}' title='true' description='true' ajax='true']"); ?>
                                 </div>
                             <?php endif; ?>
-                            <?php if ($location = get_field('location', 'options')) : ?>
-                                <div class="cell contact__map-wrap">
-                                    <div class="acf-map contact__map">
-                                        <div class="marker"
-                                             data-lat="<?php echo $location['lat']; ?>"
-                                             data-lng="<?php echo $location['lng']; ?>"
-                                             data-marker-icon="<?php echo asset_path('images/map_marker.png'); ?>"
-                                        >
-                                            <p><?php echo $location['address']; ?></p>
-                                        </div>
-                                    </div>
+                            <div class="contact__links">
+                                <?php if ($phone) : ?>
+                                    <p class="contact-link contact-link--phone">
+                                        <a href="tel:<?php echo sanitize_number($phone); ?>"><?php echo $phone; ?></a>
+                                    </p>
+                                <?php endif; ?>
+
+                                <?php if ($email) : ?>
+                                    <p class="contact-link contact-link--email">
+                                        <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
+                                    </p>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                        <div class="cell large-5 map-col">
+                            <?php if ($map_image = get_field('map_image')) : ?>
+                                <div class='map-image'>
+                                    <?php echo wp_get_attachment_image($map_image['id'], 'full_hd'); ?>
                                 </div>
                             <?php endif; ?>
                         </div>
                     </div>
-                </article>
-            <?php endwhile; ?>
-        <?php endif; ?>
-    </section>
-</main>
+                </div>
+            </article>
+        <?php endwhile; ?>
+    <?php endif; ?>
+</section>
 
 <?php get_footer(); ?>

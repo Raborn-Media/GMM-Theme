@@ -773,3 +773,51 @@ body .gform_wrapper ul.gform_fields li.gfield.gform_validation_container {
   left: -9000px;
   display: none !important;
 }
+
+.gform_button {
+  outline: none !important;
+  box-shadow: none !important;
+  color: #000 !important;
+  font-family: $sub-font !important;
+  font-size: 20px !important;
+  font-weight: 300 !important;
+  line-height: 0.9 !important;
+  text-transform: uppercase !important;
+  padding: 28px 39px 29px 39px !important;
+  background: $yellow !important;
+  position: relative !important;
+  transition: all 0.5s ease-out !important;
+  width: 100% !important;
+  max-width: fit-content !important;
+  display: block !important;
+
+  &:after {
+    content: '' !important;
+    width: 19px !important;
+    vertical-align: baseline !important;
+    aspect-ratio: 1/1 !important;
+    background-image: url('../../images/arrow.svg') !important;
+    display: block !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% !important;
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    right: 39px !important;
+    z-index: 1 !important;
+    opacity: 0 !important;
+    transition: all 0.5s ease !important;
+  }
+
+  &:hover,
+  &:focus {
+    /* basic hover and focus effects */
+    background-color: $yellow !important;
+    color: $black !important;
+    padding: 28px 68px 29px 39px !important;
+
+    &:after {
+      opacity: 1 !important;
+    }
+  }
+}
