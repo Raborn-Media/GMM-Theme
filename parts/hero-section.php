@@ -12,7 +12,7 @@ $hero_link = get_field('hero_link');
 <!-- BEGIN  hero-section -->
 <section class='hero-section' <?php bg($hero_bg['url'], 'full_hd'); ?>>\
     <div class='overlay'></div>
-    <div class='grid-container'>
+    <div class='grid-container hero-section__container'>
         <div class='grid-x'>
             <div class='cell large-6'>
                 <?php if ($hero_subtitle) : ?>

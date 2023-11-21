@@ -64,6 +64,9 @@ function resizeVideo() {
  * Scripts which runs after DOM load
  */
 $(document).on('ready', function () {
+  $('.menu-icon').on('click', function () {
+    $('body').toggleClass('body-fixed');
+  });
   /**
    * Anchor links scroll
    */
@@ -101,6 +104,26 @@ $(document).on('ready', function () {
     dots: false,
     arrows: true,
     infinite: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   });
   /**
    * Make elements equal height

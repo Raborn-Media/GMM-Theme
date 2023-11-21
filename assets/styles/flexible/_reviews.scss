@@ -77,4 +77,40 @@
       }
     }
   }
+
+  @include breakpoint(small down) {
+    padding-top: 76px;
+    padding-bottom: 133px;
+    .section-subtitle,
+    .section-title {
+      max-width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .reviews-slider {
+      padding: 0 45px;
+
+      .slick-arrow {
+        width: 45px;
+        height: fit-content;
+        &:before {
+          font-size: 55px;
+        }
+      }
+
+      &__slide {
+        article {
+          max-width: 305px;
+        }
+
+        .review-rating {
+          column-gap: 2px;
+
+          .rating-star {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
 }

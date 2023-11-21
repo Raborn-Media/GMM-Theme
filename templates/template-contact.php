@@ -20,7 +20,7 @@ $phone = $contact_phone ? $contact_phone : $default_phone;
             <article id="<?php the_ID(); ?>" <?php post_class(); ?>>
                 <div class="grid-container fluid">
                     <div class="grid-x contact-row">
-                        <div class="cell large-7">
+                        <div class="cell large-7 form-col">
                             <?php $contact_form = get_field('contact_form'); ?>
                             <?php if (class_exists('GFAPI') && !empty($contact_form) && is_array($contact_form)) : ?>
                                 <div class="contact__form">

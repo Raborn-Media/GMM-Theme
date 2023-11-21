@@ -25,6 +25,7 @@
   .section-title {
     margin-bottom: 15px;
   }
+
   .section-text {
     max-width: 780px;
     margin: 0 auto 55px;
@@ -66,6 +67,32 @@
         border-color: rgba($gmm-gray, 0.4);
       }
     }
+
+    @include breakpoint(medium down) {
+      padding-left: 42px;
+      padding-right: 42px;
+      .product {
+        max-width: 45%;
+        min-height: auto;
+        padding: 58px 0 21px;
+        border: 1px solid $black;
+
+        &__image {
+          margin-bottom: 36px;
+        }
+
+        &__title {
+          max-width: 80%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+    //@include breakpoint(small down) {
+    //  .product {
+    //    max-width: 100%;
+    //  }
+    //}
   }
 
   .section-button {
@@ -76,11 +103,30 @@
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 30.65%);
     position: relative;
     z-index: 2;
+
     .bottom-content__imege {
       img {
         width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
       }
     }
+
+    .image-col {
+      @include breakpoint(1350 down) {
+        width: 100%;
+
+        .bottom-content__imege {
+          height: 100%;
+          max-height: 700px;
+          img {
+            object-fit: cover;
+          }
+        }
+      }
+    }
+
     .text-col {
       position: relative;
       height: 100%;
@@ -126,6 +172,7 @@
           color: $yellow;
           margin-bottom: 20px;
         }
+
         h2 {
           margin-bottom: 35px;
           border-top: 1px solid $gmm-gray;
@@ -159,6 +206,48 @@
             &:last-child {
               margin-bottom: 0;
             }
+          }
+        }
+      }
+
+      @include breakpoint(1350 down) {
+        width: 100%;
+        .bottom-content__text-wrap {
+          max-width: 90%;
+          position: relative;
+          transform: translate(-50%, 0);
+          top: -85px;
+          left: 50%;
+        }
+      }
+      @include breakpoint(small down) {
+        .bottom-content__text-wrap {
+          color: #fff;
+          transform: translateY(0);
+          top: -85px;
+          left: 0;
+          max-width: 870px;
+          padding: 0 11px 12px;
+          position: relative;
+          width: 95%;
+          margin: 0 auto;
+        }
+        .bottom-content__text {
+          padding: 67px 40px 47px;
+
+          &:before {
+            right: -11px;
+            bottom: -12px;
+          }
+
+          &:after {
+            right: -11px;
+            bottom: -12px;
+          }
+
+          h2,
+          h4 {
+            text-align: center;
           }
         }
       }

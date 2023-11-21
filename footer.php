@@ -7,7 +7,7 @@
 <!-- BEGIN of footer -->
 <footer class="footer">
     <div class="grid-container">
-        <div class="grid-x grid-margin-x">
+        <div class="grid-x">
             <div class="cell large-3 contacts-col text-right">
                 <h4 class='column-title'>
                     <?php _e('Contact Us'); ?>
@@ -57,15 +57,18 @@
                     </a>
                 </div>
                 <?php if ($copyright = get_field('copyright', 'options')) : ?>
-                    <div class="footer__copy">
+                    <div class="footer__copy show-for-medium">
                         <?php echo $copyright; ?>
+                    </div>
+                    <div class="copy__mobile show-for-small-only">
+                        <?php echo wp_trim_words($copyright, 8, ''); ?>
                     </div>
                 <?php endif; ?>
                 <div class='footer__sp'>
                     <?php get_template_part('parts/socials'); // Social profiles?>
                 </div>
             </div>
-            <div class="cell large-3">
+            <div class="cell large-3 show-for-large menu-col">
                 <h4 class='column-title'>
                     <?php _e('Quick Links'); ?>
                 </h4>

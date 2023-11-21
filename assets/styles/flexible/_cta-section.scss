@@ -50,4 +50,19 @@
       background-color: $gmm-gray;
     }
   }
+
+  @include breakpoint(small down) {
+    padding-top: 0;
+    .cta-container {
+      padding: 45px 25px;
+
+      .section-button {
+        margin-bottom: 30px;
+      }
+
+      .section-image {
+        top: 0;
+      }
+    }
+  }
 }

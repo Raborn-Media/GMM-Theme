@@ -27,10 +27,18 @@
 
 .single-post-container {
   max-width: 1410px;
+
+  @include breakpoint(medium down) {
+    padding: 0 25px;
+  }
 }
 
 .entry {
   padding-right: 42px;
+  @include breakpoint(medium down) {
+    padding: 0;
+    margin-bottom: 30px;
+  }
 }
 
 .entry__thumb {
@@ -50,6 +58,12 @@
 
     img {
       width: 100%;
+    }
+  }
+  @include breakpoint(medium down) {
+    padding: 0;
+    .product-image {
+      padding: 15px;
     }
   }
 }
@@ -127,6 +141,33 @@
       &:before {
         color: $gmm-gray;
         content: '\f0da';
+      }
+    }
+  }
+  @include breakpoint(small down) {
+    .gallery-slider {
+      padding: 0 45px;
+
+      .slick-arrow {
+        width: 45px;
+        height: fit-content;
+        &:before {
+          font-size: 55px;
+        }
+      }
+
+      &__slide {
+        article {
+          max-width: 305px;
+        }
+
+        .review-rating {
+          column-gap: 2px;
+
+          .rating-star {
+            font-size: 18px;
+          }
+        }
       }
     }
   }

@@ -92,10 +92,28 @@
     }
   }
 
+  @include breakpoint(medium down) {
+    .content-col {
+      padding: 0 25px;
+    }
+  }
   @include breakpoint(800px down) {
     &:before,
     &:after {
       background-size: 200% 100%;
     }
+  }
+
+  @include breakpoint(small down) {
+    .content-col {
+      padding: 0 25px;
+    }
+  }
+}
+
+.why-choose-us.section-top-triangle {
+  padding-top: 0 !important;
+  @include breakpoint(medium down) {
+    padding-top: 220px !important;
   }
 }

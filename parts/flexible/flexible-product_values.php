@@ -9,7 +9,7 @@ $articles_bg = get_sub_field('articles_bg');
 
 <!-- BEGIN  product-values-section -->
 <section class='product-values-section' id='<?php echo $anchor_id ? $anchor_id : ''; ?>'>
-    <div class='grid-container'>
+    <div class='grid-container top-container'>
         <div class='grid-x'>
             <div class='cell large-6 content-col'>
                 <?php if ($section_subtitle) : ?>

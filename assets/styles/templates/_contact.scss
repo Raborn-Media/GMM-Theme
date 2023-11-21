@@ -4,6 +4,11 @@
   z-index: 10;
 
   .contact-row {
+    .form-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
     @include breakpoint(medium down) {
       flex-direction: column-reverse;
     }
@@ -72,6 +77,15 @@
     margin-left: auto;
     padding: 164px 50px 76px;
   }
+  @include breakpoint(small down) {
+    max-width: 100%;
+    margin-left: auto;
+    padding: 50px 25px;
+
+    .gform_fields {
+      grid-column-gap: 0 !important;
+    }
+  }
 }
 
 .map-col {
@@ -111,6 +125,12 @@
 .contact__links {
   background-color: $black;
   padding: 52px 0;
+  @include breakpoint(medium down) {
+    padding: 52px;
+  }
+  @include breakpoint(small down) {
+    padding: 52px 25px;
+  }
 }
 .contact-link {
   position: relative;
@@ -158,6 +178,11 @@
     &:focus {
       text-decoration: underline;
     }
+  }
+
+  @include breakpoint(small down) {
+    font-size: 16px;
+    margin-right: 0;
   }
 }
 .contact-link:last-child {

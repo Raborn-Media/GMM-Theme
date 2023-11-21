@@ -10,14 +10,14 @@ $section_button = get_sub_field('section_button');
 <section class='about-section'>
     <div class='grid-container'>
         <div class='grid-x content-row'>
-            <div class='cell large-6'>
+            <div class='cell large-6 show-for-large'>
                 <?php if ($section_image) : ?>
                     <div class='section-image'>
                         <?php echo wp_get_attachment_image($section_image['id'], 'large'); ?>
                     </div>
                 <?php endif; ?>
             </div>
-            <div class='cell large-6'>
+            <div class='cell large-6 content-col'>
                 <?php if ($section_subtitle) : ?>
                     <h4 class='section-subtitle'>
                         <?php echo $section_subtitle; ?>
@@ -66,6 +66,12 @@ $section_button = get_sub_field('section_button');
 
                         <?php endwhile; ?>
                     </div>
+                <?php endif; ?>
+
+                <?php if($section_button) : ?>
+                    <a href='<?php echo $section_button['url'];?>' class='button'>
+                        <?php echo $section_button['title'];?>
+                    </a>
                 <?php endif; ?>
             </div>
         </div>

@@ -140,6 +140,42 @@
       margin-bottom: 0;
     }
   }
+
+  @include breakpoint(xlarge down) {
+    .top-container {
+      padding: 0 25px;
+    }
+  }
+  @include breakpoint(medium down) {
+    .content-col {
+      padding: 0;
+      margin-bottom: 30px;
+    }
+    .anchor-links {
+      padding: 0;
+      padding-bottom: 20px;
+    }
+  }
+  @include breakpoint(small down) {
+    .anchor-articles {
+      padding: 0 25px;
+      .anchor-article {
+        margin-bottom: 50px;
+
+        .article-text {
+          margin-bottom: 20px;
+          h3 {
+            font-size: 22px;
+            line-height: 1.2;
+            &:before {
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .product-values-section .section-bottom-triangle {

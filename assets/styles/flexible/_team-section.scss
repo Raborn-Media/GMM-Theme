@@ -47,6 +47,7 @@
     }
   }
   @include breakpoint(small down) {
+    padding: 50px 0;
     .team-members-list {
       .team-member {
         max-width: 100%;

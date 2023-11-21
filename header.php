@@ -34,15 +34,15 @@
 <!-- BEGIN of header -->
 <header class="header">
     <div class="grid-container menu-grid-container">
-        <div class="grid-x grid-margin-x">
-            <div class="medium-4 small-12 cell">
+        <div class="grid-x">
+            <div class="medium-3 large-4 small-8 cell-8">
                 <div class="logo text-center medium-text-left">
-                    <h1>
+                    <h2>
                         <?php show_custom_logo(); ?><span class="show-for-sr"><?php echo get_bloginfo('name'); ?></span>
-                    </h1>
+                    </h2>
                 </div>
             </div>
-            <div class="medium-8 small-12 cell">
+            <div class="medium-9 large-8 small-4 cell-4">
                 <?php if (has_nav_menu('header-menu')) : ?>
                     <div class="title-bar hide-for-medium" data-responsive-toggle="main-menu" data-hide-for="medium">
                         <button class="menu-icon" type="button" data-toggle aria-label="Menu" aria-controls="main-menu">

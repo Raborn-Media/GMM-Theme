@@ -62,7 +62,7 @@ $top_graphics = get_sub_field('top_graphics');
     <div class='bottom-content'>
         <div class='grid-container fluid'>
             <div class='grid-x'>
-                <div class='cell large-6 matchHeight'>
+                <div class='cell large-6 matchHeight image-col'>
                     <?php if ($section_bottom_image) : ?>
                         <div class='bottom-content__imege'>
                             <?php echo wp_get_attachment_image($section_bottom_image['id'], 'full_hd'); ?>

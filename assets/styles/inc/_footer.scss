@@ -24,12 +24,15 @@
     font-size: 18px;
     font-weight: 400;
     line-height: 29.7px;
+
     &:hover {
       color: $yellow;
     }
   }
+
   .contacts-col {
     padding: 0 51px;
+
     .column-title {
       margin-bottom: 32px;
     }
@@ -40,15 +43,37 @@
       margin-bottom: 30px;
     }
   }
+
   .logo-col {
     padding: 0 41px;
     border-right: 1px solid $gmm-gray;
     border-left: 1px solid $gmm-gray;
   }
+
+  .menu-col {
+    padding: 0 51px;
+  }
+
+  @include breakpoint(small down) {
+    padding-top: 66px;
+    padding-bottom: 71px;
+
+    .logo-col {
+      border: none;
+      order: 1;
+      padding: 0 20px;
+    }
+    .contacts-col {
+      margin-top: 35px;
+      order: 2;
+      text-align: center;
+    }
+  }
 }
 
 .footer__logo {
   margin-bottom: 49px;
+
   img {
     width: 100%;
     max-width: 140px;
@@ -61,13 +86,20 @@
   .stay-tuned {
     &__item {
     }
+
     &__link {
       color: $black;
+
       .fab {
         color: inherit;
         font-size: 25px;
       }
     }
+  }
+
+  @include breakpoint(small down) {
+    padding-bottom: 35px;
+    border-bottom: 1px solid $black;
   }
 }
 
@@ -91,10 +123,11 @@
   }
 }
 
+.copy__mobile,
 .footer__copy {
   padding-top: 10px;
   padding-bottom: 10px;
-  font-size: 12px;
+  font-size: 18px;
   text-align: center;
   margin-bottom: 49px;
 }

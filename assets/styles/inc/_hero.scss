@@ -1,7 +1,7 @@
 .hero-section {
   position: relative;
-  padding-top: 312px;
-  padding-bottom: 312px;
+  overflow: hidden;
+
   background-size: cover;
 
   .overlay {
@@ -12,31 +12,36 @@
     left: 0;
     z-index: 0;
     background-color: rgba($black, 0.75);
+  }
+
+  .hero-section__container {
+    position: relative;
+    padding-top: 312px;
+    padding-bottom: 312px;
+    z-index: 1;
 
     &:before {
       content: '';
       position: absolute;
-      clip-path: polygon(
-        0 0,
-        10% 0,
-        12.5% 100%,
-        15% 0,
-        100% 0,
-        100% 100%,
-        0 100%
-      );
+      clip-path: polygon(0 0, 2% 100%, 4% 0, 100% 0, 100% 100%, 0 100%);
       left: 0;
-      width: 100%;
+      width: 3000px;
       height: 45px;
-      bottom: -1px;
+      bottom: 0px;
       z-index: 2;
       background-color: $white;
     }
-  }
 
-  .grid-container {
-    position: relative;
-    z-index: 1;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 1000px;
+      background-color: $white;
+      height: 45px;
+      bottom: 0px;
+      z-index: 2;
+      right: 100%;
+    }
   }
 
   .hero-title {
@@ -47,5 +52,72 @@
 
   .hero-subtitle {
     color: $yellow;
+  }
+
+  @include breakpoint(1600px down) {
+    padding: 0 40px;
+    .hero-section__container {
+      &:after {
+        display: none;
+      }
+
+      &:before {
+        clip-path: polygon(
+          0 0,
+          48.5% 0,
+          50% 100%,
+          51.5% 0,
+          100% 0,
+          100% 100%,
+          0 100%
+        );
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+  @include breakpoint(medium down) {
+    .hero-section__container {
+      &:after {
+        display: none;
+      }
+
+      &:before {
+        clip-path: polygon(
+          0 0,
+          48.5% 0,
+          50% 100%,
+          51.5% 0,
+          100% 0,
+          100% 100%,
+          0 100%
+        );
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+  @include breakpoint(small down) {
+    padding: 0 39px;
+    .hero-section__container {
+      padding-top: 141px;
+      padding-bottom: 110px;
+    }
+    .hero-title {
+      padding-top: 12px;
+      margin-bottom: 40px;
+    }
+    .hero-subtitle {
+      margin-bottom: 12px;
+    }
+
+    .button {
+      padding: 17px 31px;
+
+      &:hover,
+      &:focus {
+        padding: 17px 65px 17px 31px;
+      }
+    }
   }
 }
