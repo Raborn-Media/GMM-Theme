@@ -23,7 +23,7 @@
     &:before {
       content: '';
       position: absolute;
-      clip-path: polygon(0 0, 2% 100%, 4% 0, 100% 0, 100% 100%, 0 100%);
+      clip-path: polygon(0 0, 1.5% 100%, 3% 0, 100% 0, 100% 100%, 0 100%);
       left: 0;
       width: 3000px;
       height: 45px;
@@ -56,25 +56,25 @@
 
   @include breakpoint(1600px down) {
     padding: 0 40px;
-    .hero-section__container {
-      &:after {
-        display: none;
-      }
-
-      &:before {
-        clip-path: polygon(
-          0 0,
-          48.5% 0,
-          50% 100%,
-          51.5% 0,
-          100% 0,
-          100% 100%,
-          0 100%
-        );
-        left: 50%;
-        transform: translateX(-50%);
-      }
-    }
+    //.hero-section__container {
+    //  &:after {
+    //    display: none;
+    //  }
+    //
+    //  &:before {
+    //    clip-path: polygon(
+    //      0 0,
+    //      48.5% 0,
+    //      50% 100%,
+    //      51.5% 0,
+    //      100% 0,
+    //      100% 100%,
+    //      0 100%
+    //    );
+    //    left: 50%;
+    //    transform: translateX(-50%);
+    //  }
+    //}
   }
   @include breakpoint(medium down) {
     .hero-section__container {

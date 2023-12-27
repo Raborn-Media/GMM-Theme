@@ -1,7 +1,7 @@
 {
   "devUrl": "https://a25ef9db52.nxcli.io",
   "themeName": "gmm-theme",
-  "proxyUrl": "https://localhost:3000",
+  "proxyUrl": "https://localhost:3001",
   "open": true,
   "bsWatchFiles": [
     "inc/**/*.php",

@@ -24,9 +24,12 @@
   }
 
   .content-col {
-    padding-top: 306px;
-    padding-bottom: 291px;
-    padding-right: 60px;
+    //padding-top: 306px;
+    //padding-bottom: 291px;
+    //padding-right: 60px;
+    //padding-left: 15px;
+
+    padding: 306px 60px 291px 15px;
 
     .section-subtitle {
       color: $gmm-gray;
