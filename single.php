@@ -38,30 +38,62 @@ get_template_part('parts/hero-section');
                         </div>
                     </div>
                 <?php endif; ?>
+
+                <?php if ($product_second_image = get_field('product_second_image')) : ?>
+                    <div title="<?php the_title_attribute(); ?>" class="entry__thumb">
+                        <div class='product-image'>
+                            <?php echo wp_get_attachment_image($product_second_image['id'], 'full_hd'); ?>
+                        </div>
+                    </div>
+<!---->
+<!--                --><?php //else : ?>
+<!--                    <div title="--><?php //the_title_attribute(); ?><!--" class="entry__thumb">-->
+<!--                        <div class='product-image'>-->
+<!--                            --><?php //the_post_thumbnail('full_hd'); ?>
+<!--                        </div>-->
+<!--                    </div>-->
+                <?php endif; ?>
             </div>
             <!-- END of post content -->
         </div>
-    </div>
-    <!-- BEGIN  gallery-section -->
-    <?php
-    $images = get_field('gallery_slider');
-    if ($images): ?>
-        <section class='gallery-section'>
-            <div class='grid-container'>
-                <div class='grid-x'>
-                    <div class='cell'>
-                        <div class='gallery-slider'>
-                            <?php foreach ($images as $image): ?>
-                                <div class='gallery-slider__slide'>
-                                    <?php echo wp_get_attachment_image($image['id'], 'large', false, ['data-no-lazy' => '1']); ?>
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
+
+        <?php if ($technical_data = get_field('technical_data')) : ?>
+            <div class='technical-data-wrap'>
+
+                <div class='technical-data-heading'>
+                    <h3>
+                        <?php _e('Technical Data'); ?>
+                    </h3>
+                </div>
+
+                <div class='technical-data'>
+                    <article>
+                        <?php echo $technical_data; ?>
+                    </article>
                 </div>
             </div>
-        </section>
-    <?php endif; ?>
+        <?php endif; ?>
+    </div>
+    <!-- BEGIN  gallery-section -->
+    <!--    --><?php
+    //    $images = get_field('gallery_slider');
+    //    if ($images): ?>
+    <!--        <section class='gallery-section'>-->
+    <!--            <div class='grid-container'>-->
+    <!--                <div class='grid-x'>-->
+    <!--                    <div class='cell'>-->
+    <!--                        <div class='gallery-slider'>-->
+    <!--                            --><?php //foreach ($images as $image): ?>
+    <!--                                <div class='gallery-slider__slide'>-->
+    <!--                                    --><?php //echo wp_get_attachment_image($image['id'], 'large', false, ['data-no-lazy' => '1']); ?>
+    <!--                                </div>-->
+    <!--                            --><?php //endforeach; ?>
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </section>-->
+    <!--    --><?php //endif; ?>
 
     <!-- END  gallery-section -->
 

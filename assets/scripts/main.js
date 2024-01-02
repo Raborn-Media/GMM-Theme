@@ -88,6 +88,14 @@ $(document).on('ready', function () {
   /**
    * Reviews slider
    */
+  $('.technical-data-heading').on('click', function () {
+    $(this).toggleClass('technical-data-heading--open');
+    $('.technical-data').toggleClass('technical-data--open');
+  });
+
+  /**
+   * Reviews slider
+   */
   $('.reviews-slider').slick({
     infinite: true,
     slidesToShow: 1,

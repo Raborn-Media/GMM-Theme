@@ -43,6 +43,8 @@
 
 .entry__thumb {
   padding-left: 42px;
+  margin-bottom: 60px;
+
   .product-image {
     margin-bottom: 20px;
     aspect-ratio: 650/577;
@@ -60,6 +62,11 @@
       width: 100%;
     }
   }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   @include breakpoint(medium down) {
     padding: 0;
     .product-image {
@@ -89,11 +96,15 @@
     margin-bottom: 30px;
   }
 
+  strong {
+    color: $black;
+  }
+
   ul {
     max-width: 90%;
 
     li {
-      margin-bottom: 30px;
+      margin-bottom: 15px;
     }
 
     li:last-child {
@@ -102,73 +113,160 @@
   }
 }
 
-.gallery-section {
-  margin-top: 120px;
-  margin-bottom: 120px;
+//.gallery-section {
+//  margin-top: 120px;
+//  margin-bottom: 120px;
+//
+//  .gallery-slider {
+//    padding: 0 64px;
+//
+//    &__slide {
+//      padding: 0 18px;
+//
+//      img {
+//        width: 100%;
+//        aspect-ratio: 1/1;
+//        object-fit: cover;
+//      }
+//    }
+//
+//    .slick-arrow {
+//      &:before {
+//        color: #000;
+//        font-size: 35px;
+//      }
+//    }
+//
+//    .slick-prev {
+//      left: 0;
+//
+//      &:before {
+//        color: $gmm-gray;
+//        content: '\f0d9';
+//      }
+//    }
+//
+//    .slick-next {
+//      right: 0;
+//
+//      &:before {
+//        color: $gmm-gray;
+//        content: '\f0da';
+//      }
+//    }
+//  }
+//  @include breakpoint(small down) {
+//    .gallery-slider {
+//      padding: 0 45px;
+//
+//      .slick-arrow {
+//        width: 45px;
+//        height: fit-content;
+//        &:before {
+//          font-size: 55px;
+//        }
+//      }
+//
+//      &__slide {
+//        article {
+//          max-width: 305px;
+//        }
+//
+//        .review-rating {
+//          column-gap: 2px;
+//
+//          .rating-star {
+//            font-size: 18px;
+//          }
+//        }
+//      }
+//    }
+//  }
+//}
 
-  .gallery-slider {
-    padding: 0 64px;
+.technical-data-wrap {
+  border: 1px solid;
+  margin-top: 90px;
+  margin-bottom: 100px;
+  color: $gmm-gray;
 
-    &__slide {
-      padding: 0 18px;
+  .technical-data-heading {
+    padding: 36px 55px 36px 62px;
+    //margin-bottom: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
 
-      img {
-        width: 100%;
-        aspect-ratio: 1/1;
-        object-fit: cover;
-      }
+    h3 {
+      color: #000;
     }
 
-    .slick-arrow {
-      &:before {
-        color: #000;
-        font-size: 35px;
-      }
+    &:after {
+      content: '\2b';
+      width: 30px;
+      height: 30px;
+      background-color: $black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      font-size: 18px;
+      font-family: $fa;
+      color: $white;
     }
 
-    .slick-prev {
-      left: 0;
-
-      &:before {
-        color: $gmm-gray;
-        content: '\f0d9';
-      }
-    }
-
-    .slick-next {
-      right: 0;
-
-      &:before {
-        color: $gmm-gray;
-        content: '\f0da';
+    &--open {
+      &:after {
+        content: '\f068';
       }
     }
   }
+
+  ul {
+    max-width: 90%;
+
+    li {
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 165.4%; /* 29.772px */
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .technical-data {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: all 0.5s ease-out;
+    padding: 0 55px 0 62px;
+
+    article {
+      //padding-top: 40px;
+      overflow: hidden;
+      transition: all 0.5s ease-out;
+    }
+
+    &--open {
+      grid-template-rows: 1fr;
+
+      article {
+        padding: 40px 0;
+      }
+    }
+  }
+
   @include breakpoint(small down) {
-    .gallery-slider {
-      padding: 0 45px;
-
-      .slick-arrow {
-        width: 45px;
-        height: fit-content;
-        &:before {
-          font-size: 55px;
-        }
-      }
-
-      &__slide {
-        article {
-          max-width: 305px;
-        }
-
-        .review-rating {
-          column-gap: 2px;
-
-          .rating-star {
-            font-size: 18px;
-          }
-        }
-      }
+    padding: 0 25px;
+    .technical-data-heading {
+      padding: 36px 0px 36px 0px;
+    }
+    .technical-data {
+      padding: 0px;
     }
   }
 }
